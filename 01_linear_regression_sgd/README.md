@@ -3,11 +3,11 @@ One of the most basic machine learning algorithms is to use a linear model to fi
 
 We want to think of the data in matrices, so hopefully you remember your matrix multiplication!  Put the `X` data into a matrix and the output data will be in a `T` matrix.  Then to solve the equation of getting from `X` to `T` you need a weights matrix we will use `w`.
 
-![Image of matrix X, T, w](https://github.com/rsimpson-cb/ml-tutorial-go/blob/master/01_linear_regression_sgd/matrix.PNG)
+![Image of matrix X, T, w](https://raw.githubusercontent.com/randysimpson/ml-tutorial-go/master/01_linear_regression_sgd/matrix.PNG)
 
 We know that `X` x `w` = `T`.  And we know `X` and `T` for a bunch of values but we don't know `w`?  Well that's what we are looking for and with a bunch of math we can actually solve for `w`.  I'll skip the math for now and show you the solution, and it involves the transpose of matrix `X`.
 
-![Image of solving for w](https://github.com/rsimpson-cb/ml-tutorial-go/blob/master/01_linear_regression_sgd/solve_for_w.PNG)
+![Image of solving for w](https://raw.githubusercontent.com/randysimpson/ml-tutorial-go/master/01_linear_regression_sgd/solve_for_w.PNG)
 
 This is awesome if we are using a small enough data set, but what if we need to use a huge data set?  Well there is an answer for that, use an incremental way of solving for `w`.  There is some math using derivatives and gradients, but this is really intented to show the algorithm instead of how the math is derived.  The solution is to use the stochastic gradient decent algorithm or SGD.
 
@@ -56,7 +56,7 @@ I0820 16:24:39.693216       1 main.go:33] T: =[1.534838924265527 1.3854913146395
 
 Here is a chart to visualize the sample data:
 
-![Image of sample data for function](https://github.com/rsimpson-cb/ml-tutorial-go/blob/master/01_linear_regression_sgd/sample_data.PNG)
+![Image of sample data for function](https://raw.githubusercontent.com/randysimpson/ml-tutorial-go/master/01_linear_regression_sgd/sample_data.PNG)
 
 This is great, but we need matrices for our next steps and currently we just have slices.  To convert it into a shape for a matrix lets make these slices of slices.  Not sure about that, well currently the data is singular X for singular T, so it may sound strange, but in the future we will use data that has multiple inputs (X's) or even multiple outputs (T's).  Here is the code I'm using to convert to slice of slices:
 
@@ -171,7 +171,7 @@ I0820 16:24:39.694488       1 main.go:100] predicted y's= [[1.7946261673868897] 
 
 Each of those Y values correspond to the X value from X1.  If we plot the data, we can easily see the linear regression line that was generated from this model:
 
-![Image of linear regression model for function](https://github.com/rsimpson-cb/ml-tutorial-go/blob/master/01_linear_regression_sgd/linear_regression.PNG)
+![Image of linear regression model for function](https://raw.githubusercontent.com/randysimpson/ml-tutorial-go/master/01_linear_regression_sgd/linear_regression.PNG)
 
 For the sample data set that we used, you can see sometimes the actual values are above the line, and sometimes the values are below the line.  This is because we are using a line to fit the shape of data from a non-linear function.  But in some cases this type of model may work good enough for predicting data, or understanding trends.  In a later module we will learn how to make the model train for better predictions on non-linear functions.
 
