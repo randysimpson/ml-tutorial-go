@@ -2,12 +2,37 @@
 Machine Learning tutorial in golang
 
 ## Introduction
-This is meant to be a step by step guide to using machine learning algorithms in go.  It is assumed that you have basic understanding of golang.  I'll also be using docker as it will make compiling the projects much easier.  In fact I'm not even going to install golang on my machine, but I will have docker installed.  After code changes I can build the container and then run it to see the output.
+This is meant to be a step by step guide to using machine learning algorithms in go.  It is assumed that you have basic understanding of golang.  I'll also be using docker as it will make compiling the projects much easier.  In fact I'm not even going to install golang on my machine, but you must have docker installed.  The process involves building the container and then running it to see the output.  To find out more read [Running module code with Docker](https://github.com/randysimpson/ml-tutorial-go#Running-module-code-with-Docker)
 
-## Docker/Go
-All you need to do is copy the files into a folder and create the container using the command `docker build -t randysimpson/ml-tutorial-go:v1.0 .`
+## Modules
+
+* [01 - Linear Regression with SGD](https://github.com/randysimpson/ml-tutorial-go/blob/master/01_linear_regression_sgd/README.md)
+
+## Running module code with Docker
+All you need to do is clone this repo with `git clone https://github.com/randysimpson/ml-tutorial-go.git`.
+
 ```sh
-rsimpson@k8s:~/ml-tutorial-go$ docker build -t randysimpson/ml-tutorial-go:v1.0 .
+~$ git clone https://github.com/randysimpson/ml-tutorial-go.git
+Cloning into 'ml-tutorial-go'...
+remote: Enumerating objects: 19, done.
+remote: Counting objects: 100% (19/19), done.
+remote: Compressing objects: 100% (14/14), done.
+remote: Total 19 (delta 5), reused 19 (delta 5), pack-reused 0
+Unpacking objects: 100% (19/19), done.
+~$
+```
+
+Change directory to the repo `cd ml-tutorial-go` and then to the module `cd 01_linear_regression_sgd`.
+
+```sh
+~$ cd ml-tutorial-go
+~/ml-tutorial-go$ cd 01_linear_regression_sgd
+~/ml-tutorial-go/01_linear_regression_sgd$ 
+```
+
+Then create the container using the command `docker build -t randysimpson/ml-tutorial-go:v1.0 .`
+```sh
+~/ml-tutorial-go/01_linear_regression_sgd$ docker build -t randysimpson/ml-tutorial-go:v1.0 .
 Sending build context to Docker daemon  3.072kB
 Step 1/11 : FROM golang:1.14 as builder
  ---> a794da9351a3
@@ -50,14 +75,10 @@ Successfully tagged randysimpson/ml-tutorial-go:v1.0
 
 To run the container execute `docker run randysimpson/ml-tutorial-go:v1.0`
 ```sh
-rsimpson@k8s:~/ml-tutorial-go$ docker run randysimpson/ml-tutorial-go:v1.0
+~/ml-tutorial-go/01_linear_regression_sgd$ docker run randysimpson/ml-tutorial-go:v1.0
 I0819 16:13:14.933154       1 main.go:8] Initializing ml tutorial application
+...
 ```
-
-## Machine Learning Topics
-
-* [01 - Linear Regression with SGD](https://github.com/rsimpson-cb/ml-tutorial-go/blob/master/01_linear_regression_sgd/README.md)
-
 
 # Licence
 
