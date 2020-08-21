@@ -57,7 +57,7 @@ func main() {
 	var w [][]float64
 	for i := 0; i < len(X1[0]); i++ { //length of row in X
 		var arrayFloat []float64
-		for j := 0; j < len(T[0]); j++ { //length of row in T
+		for j := 0; j < len(T1[0]); j++ { //length of row in T
 			arrayFloat = append(arrayFloat, 0.0)
 		}
 		w = append(w, arrayFloat)

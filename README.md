@@ -1,4 +1,4 @@
-# ml-tutorial-go
+# ML Tutorial
 Machine Learning tutorial in golang
 
 ## Introduction
@@ -7,6 +7,14 @@ This is meant to be a step by step guide to using machine learning algorithms in
 ## Modules
 
 * [01 - Linear Regression with SGD](https://github.com/randysimpson/ml-tutorial-go/blob/master/01_linear_regression_sgd/README.md)
+  
+  Build up a machine learning algorithm that will apply linear regression to a model of data based on a function.
+* [02 - Linear Regression on Actual Data](https://github.com/randysimpson/ml-tutorial-go/blob/master/02_linear_regression_applied/README.md)
+
+  Apply linear regression to actual data with multiple inputs and a single output.  Use a training set of data and a test set of data, where we can find the test data's root mean squared error (RMSE).
+* [03 - Linear Regression with Standardization](https://github.com/randysimpson/ml-tutorial-go/blob/master/03_linear_regression_std/README.md)
+
+  Build off of module 2 data and apply standardization to the data before training.
 
 ## Running module code with Docker
 All you need to do is clone this repo with `git clone https://github.com/randysimpson/ml-tutorial-go.git`.
