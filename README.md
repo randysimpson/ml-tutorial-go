@@ -15,6 +15,9 @@ This is meant to be a step by step guide to using machine learning algorithms in
 * [03 - Linear Regression with Standardization](https://github.com/randysimpson/ml-tutorial-go/blob/master/03_linear_regression_std/README.md)
 
   Build off of module 2 data and apply standardization to the data before training.
+* [04 - Linear Regression with Multiple Outputs](https://github.com/randysimpson/ml-tutorial-go/blob/master/04_linear_regression_multi/README.md)
+
+  This is an example of using linear regression to estimate 2 different outputs.
 
 ## Running module code with Docker
 All you need to do is clone this repo with `git clone https://github.com/randysimpson/ml-tutorial-go.git`.
