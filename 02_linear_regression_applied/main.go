@@ -182,7 +182,7 @@ func main() {
 			//Find the amount of change to apply to the weight matrix
 			xT := matrix.Transpose(xMatrix)
 			diff := matrix.Multiply(xT, err)
-			change := matrix.MultiplyScaler(diff, learning_rate)
+			change := matrix.MultiplyScalar(diff, learning_rate)
 
 			//add the change to the weight matrix
 			w = matrix.Add(w, change)
