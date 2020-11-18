@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Non-linear features Chart</title>
+	<script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
+	<script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+	<style>
+	canvas {
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	</style>
+</head>
+
+<body>
+	<div style="width:75%">
+		<canvas id="canvas"></canvas>
+	</div>
+	<script>
+		var color = Chart.helpers.color;
+
+		var chartData = {
+			datasets: [{
+        type: 'scatter',
+        label: 'Predicted',
+				borderColor: window.chartColors.red,
+				backgroundColor: color(window.chartColors.red).alpha(0.2).rgbString(),
+				data: [{x: -10, y: 0.3209320575959239},{x: -9.333333333333334, y: 0.6687830721702304},{x: -8.666666666666666, y: 0.78835383785569},{x: -8, y: 0.7512618081676687},{x: -7.333333333333334, y: 0.6011698834019114},{x: -6.666666666666667, y: 0.42780409608989456},{x: -6, y: 0.11040640572032394},{x: -5.333333333333334, y: 0.06505521744072024},{x: -4.666666666666667, y: 0.16072881382253157},{x: -4, y: 0.4484161728374871},{x: -3.333333333333334, y: 0.786036351262234},{x: -2.666666666666667, y: 1.0763934067122083},{x: -2, y: 1.038596073165828},{x: -1.333333333333334, y: 0.9844852572384952},{x: -0.6666666666666679, y: 0.7668051957546331},{x: 0, y: 0.5761695246247366},{x: 0.6666666666666661, y: 0.4113818608341792},{x: 1.3333333333333321, y: 0.4478871873278356},{x: 2, y: 0.7211877679838693},{x: 2.666666666666666, y: 0.9170951380705152},{x: 3.333333333333332, y: 1.1848846558269535},{x: 4, y: 1.3684172256493294},{x: 4.666666666666666, y: 1.3926919357347458},{x: 5.333333333333332, y: 1.2855362162974169},{x: 6, y: 0.9434615222447456},{x: 6.666666666666664, y: 0.7653709447814143},{x: 7.333333333333332, y: 0.8177767845432437},{x: 8, y: 0.8409216336740694},{x: 8.666666666666664, y: 1.2336517769723383},{x: 9.333333333333332, y: 1.4920610670695211},{x: 10, y: 1.6699421615010512}]
+			}]
+		};
+
+		window.onload = function() {
+			var ctx = document.getElementById('canvas').getContext('2d');
+			window.myScatter = new Chart(ctx, {
+        type: 'scatter',
+				data: chartData,
+				options: {
+					title: {
+						display: true,
+						text: 'X Chart'
+					},
+					legend: {
+						display: false
+					},
+					scales: {
+						xAxes: [{
+							display: true,
+							scaleLabel: {
+								display: true,
+								labelString: 'X'
+							}
+						}],
+						yAxes: [{
+							display: true,
+							scaleLabel: {
+								display: true,
+								labelString: 'T'
+							}
+						}]
+					}
+				}
+			});
+		};
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Non-linear features Chart</title>
+	<script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
+	<script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+	<style>
+	canvas {
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	</style>
+</head>
+
+<body>
+	<div style="width:75%">
+		<canvas id="canvas"></canvas>
+	</div>
+	<script>
+		var color = Chart.helpers.color;
+
+		var chartData = {
+			datasets: [{
+        type: 'scatter',
+        label: 'Predicted',
+				borderColor: window.chartColors.red,
+				backgroundColor: color(window.chartColors.red).alpha(0.2).rgbString(),
+				data: [{x: 0, y: 0.28915671},{x: 0.52631579, y: 0.21653494},{x: 1.05263158, y: 0.25185551},{x: 1.5789473699999999, y: 0.01140274},{x: 2.10526316, y: 0.48967839},{x: 2.6315789499999998, y: -0.08865728},{x: 3.1578947399999997, y: 0.49066828},{x: 3.6842105299999997, y: 0.08029735},{x: 4.21052632, y: 0.07973087},{x: 4.7368421099999996, y: 0.79336589},{x: 5.2631578999999995, y: 0.43872394},{x: 5.7894736899999995, y: 0.67417021},{x: 6.315789479999999, y: 0.40204166},{x: 6.842105269999999, y: 0.43322684},{x: 7.368421059999999, y: 1.0246913},{x: 7.894736849999999, y: 0.81918133},{x: 8.42105264, y: 0.72089012},{x: 8.94736843, y: 1.16564833},{x: 9.473684219999999, y: 0.88999126},{x: 10.000000009999999, y: 1.36328895}]
+			}, {
+				type: 'line',
+				fill: false,
+        label: 'Predicted',
+				borderColor: window.chartColors.blue,
+				backgroundColor: color(window.chartColors.blue).alpha(0.2).rgbString(),
+				data: [{x: 0, y: 0.1050914462927731},{x: 0.52631579, y: 0.13236501354318894},{x: 1.05263158, y: 0.16540841377623008},{x: 1.5789473699999999, y: 0.20475405093196727},{x: 2.10526316, y: 0.250648046239914},{x: 2.6315789499999998, y: 0.30291056590709653},{x: 3.1578947399999997, y: 0.3608231543765522},{x: 3.6842105299999997, y: 0.42308781571956655},{x: 4.21052632, y: 0.48789551686758403},{x: 4.7368421099999996, y: 0.5531127424088856},{x: 5.2631578999999995, y: 0.6165519459601726},{x: 5.7894736899999995, y: 0.6762565919049521},{x: 6.315789479999999, y: 0.7307250400095927},{x: 6.842105269999999, y: 0.7790238939979929},{x: 7.368421059999999, y: 0.8207842718630826},{x: 7.894736849999999, y: 0.8561103942085466},{x: 8.42105264, y: 0.8854450582587108},{x: 8.94736843, y: 0.9094319578911024},{x: 9.473684219999999, y: 0.9288000702811104},{x: 10.000000009999999, y: 0.9442800525230597}]
+			}]
+		};
+
+		window.onload = function() {
+			var ctx = document.getElementById('canvas').getContext('2d');
+			window.myScatter = new Chart(ctx, {
+        type: 'scatter',
+				data: chartData,
+				options: {
+					title: {
+						display: true,
+						text: 'X Chart'
+					},
+					legend: {
+						display: false
+					},
+					scales: {
+						xAxes: [{
+							display: true,
+							scaleLabel: {
+								display: true,
+								labelString: 'X'
+							}
+						}],
+						yAxes: [{
+							display: true,
+							scaleLabel: {
+								display: true,
+								labelString: 'T'
+							}
+						}]
+					}
+				}
+			});
+		};
+	</script>
+</body>
+
+</html>
